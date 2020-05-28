@@ -9,6 +9,7 @@ ENV SQUID_CACHE_DIR=/var/spool/squid \
     SQUID_LOG_DIR=/var/log/squid
 
 COPY ./files/apt-get-noninteractive.conf /etc/apt/apt.conf.d/apt-get-noninteractive.conf
+COPY ./files/localnet.conf /etc/squid/conf.d/localnet.conf
 
 RUN apt-get update && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends apt-utils \
